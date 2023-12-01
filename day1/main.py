@@ -1,16 +1,5 @@
 file = open('day1/input.in').read()
 rows = file.split('\n')
-writtenNumbers = {
-    'one': '1',
-    'two': '2',
-    'three': '3',
-    'four': '4',
-    'five': '5',
-    'six': '6',
-    'seven': '7',
-    'eight': '8',
-    'nine': '9'
-}
 
 
 def part1():
@@ -28,6 +17,17 @@ def part1():
 
 
 def part2():
+    written_numbers = {
+        'one': '1',
+        'two': '2',
+        'three': '3',
+        'four': '4',
+        'five': '5',
+        'six': '6',
+        'seven': '7',
+        'eight': '8',
+        'nine': '9'
+    }
     result = 0
 
     for row in rows:
@@ -40,7 +40,7 @@ def part2():
 
             buffer += char
 
-            for key, value in writtenNumbers.items():
+            for key, value in written_numbers.items():
                 if buffer.find(key) != -1:
                     numbers.append(value)
                     buffer = buffer[buffer.find(key) + len(key) - 1:]
